@@ -3,18 +3,18 @@ package main
 import (
 	"echo-jwt/example/mux/auth"
 	"encoding/json"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
-	"github.com/gorilla/mux"
 )
 
 type Post struct {
 	Title string `json:"title"`
-	Tag string `json:"tag"`
-	URL string `json:"url"`
+	Tag   string `json:"tag"`
+	URL   string `json:"url"`
 }
 
-func main(){
+func main() {
 	r := mux.NewRouter()
 	// /publicでpublic handler
 	r.Handle("/public", public)
